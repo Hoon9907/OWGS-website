@@ -23,7 +23,7 @@ window.OWGS_CONFIG = {
     youth: {
       applicationUrl: 'https://first.nexon.com/thinker/direct/public/survey/Kf1zLhSHvv',
       applicationPreviewEnabled: true,
-      rulesUrl: '',
+      rulesUrl: 'https://drive.google.com/file/d/1ZgJz44Laq7MWxbx0lezZBvv4_3is6oPO/view?usp=sharing',
 
       registrationOpensAt: '2026-11-04T00:00:00+09:00',
       registrationClosesAt: '2026-11-16T00:00:00+09:00',
@@ -34,7 +34,7 @@ window.OWGS_CONFIG = {
     campus: {
       applicationUrl: 'https://first.nexon.com/thinker/direct/public/survey/qPwDLlZDyw',
       applicationPreviewEnabled: true,
-      rulesUrl: '',
+      rulesUrl: 'https://drive.google.com/file/d/1Itmncou-kPds0oLpRu8fDWr2pX5qA7pH/view?usp=sharing',
 
       registrationOpensAt: '2026-11-04T00:00:00+09:00',
       registrationClosesAt: '2026-11-16T00:00:00+09:00',

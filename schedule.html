@@ -153,8 +153,22 @@
           <section class="panel-block broadcast-block" aria-labelledby="broadcast-title">
             <div class="panel-block-head">
               <h2 id="broadcast-title">공식 중계 채널</h2>
-              <p>YOUTH와 CAMPUS 모든 경기를 아래 공식 채널에서 중계합니다.</p>
             </div>
+            <!-- 공개 시 아래 Coming Soon 블록을 삭제하세요. -->
+            <div class="media-frame media-empty">
+              <strong>COMING SOON</strong>
+              <p>공식 중계 채널은 추후 공개됩니다.</p>
+            </div>
+
+            <!--
+              공식 중계 채널 복원 방법
+              1. 위 Coming Soon 블록을 삭제합니다.
+              2. 아래 channel-grid를 감싼 주석의 시작과 끝을 삭제합니다.
+              3. assets/js/tournament-config.js의 channels에 각 공식 채널 주소를 입력합니다.
+                 주소가 비어 있는 채널은 '준비 중'으로 표시되며 연결되지 않습니다.
+              대회 개요 페이지에서도 공개하려면 index.html의 채널 카드 주석도 해제하세요.
+            -->
+            <!--
             <div class="channel-grid">
               <a class="channel" role="link" aria-disabled="true" data-channel="youtube"
                 data-label="YouTube 공식 중계 채널">
@@ -184,6 +198,7 @@
                 <span class="link-state">준비 중</span>
               </a>
             </div>
+            -->
           </section>
         </div>
       </div>

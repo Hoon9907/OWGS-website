@@ -43,9 +43,12 @@ window.OWGS_CONFIG = {
   },
 
   // 공식 중계 채널: Youth·Campus 모두 같은 채널에서 중계합니다.
+  // 공개 시 아래 빈 따옴표 안에 각 공식 채널의 전체 주소(https://...)를 입력하세요.
+  // index.html의 #broadcast에서 Coming Soon 블록을 삭제하고 channel-grid의 주석을 해제하면 복원됩니다.
+  // 주소를 비워 두면 해당 채널은 연결되지 않고 '준비 중'으로 표시됩니다.
   channels: {
-    youtube: 'https://www.youtube.com/@ownexon',
-    chzzk: 'https://chzzk.naver.com/909df545d2f00ce522bdc03c1f94d709',
-    soop: 'https://www.sooplive.com/station/ownexon'
+    youtube: '', // YouTube 공식 중계 채널 주소
+    chzzk: '', // 치지직 공식 중계 채널 주소
+    soop: '' // SOOP 공식 중계 채널 주소
   }
 };

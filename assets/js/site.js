@@ -123,6 +123,64 @@
     setInterval(updateStages, 60000);
   }
 
+  // 일정 안에서 하나의 카드만 펼치는 가로 아코디언입니다.
+  const detailStages = stages.filter(stage => stage.querySelector('.stage-details'));
+  const stageGrid = document.querySelector('.stages');
+  const stageHover = matchMedia('(hover: hover) and (pointer: fine)');
+  let stageHoverTimer;
+  function scheduleStage(selected) {
+    clearTimeout(stageHoverTimer);
+    stageHoverTimer = setTimeout(() => expandStage(selected), 100);
+  }
+  function expandStage(selected) {
+    clearTimeout(stageHoverTimer);
+    detailStages.forEach(stage => {
+      const expanded = stage === selected;
+      stage.classList.toggle('is-expanded', expanded);
+      stage.setAttribute('aria-expanded', String(expanded));
+      stage.querySelector('.stage-details').inert = !expanded;
+    });
+    if (stageGrid) {
+      stageGrid.classList.toggle('has-main-open', selected === detailStages[0]);
+      stageGrid.classList.toggle('has-final-open', selected === detailStages[1]);
+    }
+  }
+  detailStages.forEach((stage, index) => {
+    const panel = stage.querySelector('.stage-details');
+    panel.id = `stage-panel-${index}`;
+    panel.inert = true;
+    stage.setAttribute('aria-controls', panel.id);
+    stage.setAttribute('aria-expanded', 'false');
+    stage.addEventListener('pointerenter', () => {
+      if (!stageHover.matches) return;
+      scheduleStage(stage);
+    });
+    stage.addEventListener('pointerleave', () => {
+      if (stageHover.matches) scheduleStage(null);
+    });
+    stage.addEventListener('focusin', () => expandStage(stage));
+    stage.addEventListener('click', event => {
+      if (event.target.closest('a, button')) return;
+      expandStage(stage);
+    });
+    stage.addEventListener('keydown', event => {
+      if (event.target !== stage) return;
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        expandStage(stage.classList.contains('is-expanded') ? null : stage);
+      }
+      if (event.key === 'Escape') expandStage(null);
+    });
+  });
+  stages.filter(stage => !detailStages.includes(stage)).forEach(stage => {
+    stage.addEventListener('pointerenter', () => { if (stageHover.matches) scheduleStage(null); });
+  });
+  stageGrid?.addEventListener('pointerleave', () => {
+    if (stageHover.matches) scheduleStage(null);
+  });
+  stageGrid?.addEventListener('focusout', event => {
+    if (!stageGrid.contains(event.relatedTarget) && !stageGrid.matches(':hover')) scheduleStage(null);
+  });
   // 오시는 길: 지도는 팝업으로 보여줍니다.
   const venueDialog = document.querySelector('#venue-dialog');
 

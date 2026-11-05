@@ -69,7 +69,6 @@
 | --- | --- |
 | `assets/images/favicon/favicon.svg`, `favicon-32.png` | 브라우저 탭 아이콘 (BI 가이드 심볼마크) |
 | `assets/images/favicon/apple-touch-icon.png` | 아이폰 홈 화면 아이콘 (180×180) |
-| `assets/images/favicon/favicon-192.png`, `favicon-512.png` | 안드로이드 등 큰 아이콘용 예비 |
 | `assets/images/og/owgs-og.jpg` | 카카오톡·SNS 링크 미리보기 (1200×630, KV 원본 + 좌우 검은 여백) |
 
 **배포 후 꼭 할 일:** 각 HTML `<head>`의 `og:url`, `og:image`를 실제 도메인을 포함한 전체 주소로 바꾸세요. 상대 경로로는 카카오톡 등에서 이미지가 뜨지 않습니다. 바꾼 뒤 [카카오 공유 디버거](https://developers.kakao.com/tool/debugger/sharing)에서 캐시를 초기화하면 바로 반영됩니다.
@@ -83,7 +82,6 @@
 | `assets/images/logo/owgs-horizontal.svg` | 메인 가로형 (헤더·푸터) |
 | `assets/images/logo/owgs-vertical.svg` | 메인 세로형 |
 | `assets/images/logo/owgs-youth-vertical.svg`, `owgs-campus-vertical.svg` | 리그 세로형 (참가 신청 카드) |
-| `assets/images/logo/owgs-youth-horizontal.svg`, `owgs-campus-horizontal.svg` | 리그 가로형 |
 
 ### 브랜드 컬러 (BI 가이드 Main Color)
 

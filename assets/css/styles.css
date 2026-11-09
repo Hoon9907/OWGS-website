@@ -2044,3 +2044,11 @@ time small {
     animation: none !important;
   }
 }
+
+/* 참가 보상: 공식 모집 이미지를 자르지 않고 전체 표시합니다. */
+.rewards { background: var(--bg-band); }
+.rewards-poster {
+  display: block;
+  width: 100%;
+  height: auto;
+}

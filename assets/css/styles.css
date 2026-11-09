@@ -2052,3 +2052,12 @@ time small {
   width: 100%;
   height: auto;
 }
+.rewards-notes {
+  margin-top: 16px;
+  padding-left: 18px;
+  list-style: disc;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.8;
+}
+.rewards-notes li + li { margin-top: 6px; }

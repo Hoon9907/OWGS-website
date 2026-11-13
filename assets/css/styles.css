@@ -791,7 +791,8 @@ main:focus {
   initial-value: 0deg;
 }
 
-.stage[aria-controls]::after {
+.stage[aria-controls]::after,
+.rewards-connect-button::after {
   content: "";
   position: absolute;
   z-index: 2;
@@ -811,7 +812,8 @@ main:focus {
   animation: stage-led-loop 3s linear infinite paused;
 }
 
-.stage[aria-controls]:is(:hover, :focus-within, .is-expanded)::after {
+.stage[aria-controls]:is(:hover, :focus-within, .is-expanded)::after,
+.rewards-connect-button:is(:hover, :focus-visible)::after {
   opacity: 1;
   animation-play-state: running;
 }
@@ -2061,3 +2063,22 @@ time small {
   line-height: 1.8;
 }
 .rewards-notes li + li { margin-top: 6px; }
+.rewards-actions { display: flex; justify-content: center; margin-top: 24px; }
+
+.rewards-connect-button {
+  position: relative;
+  justify-content: center;
+  transition: color 240ms ease, filter 240ms ease;
+}
+.rewards-connect-button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--surface-2);
+  opacity: 0;
+  transition: opacity 240ms ease;
+  pointer-events: none;
+}
+.rewards-connect-button > span { position: relative; z-index: 1; }
+.rewards-connect-button:is(:hover, :focus-visible)::before { opacity: 1; }
+.rewards-connect-button:is(:hover, :focus-visible) { color: var(--text); filter: none; }

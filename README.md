@@ -81,7 +81,7 @@
 | --- | --- |
 | `assets/images/logo/owgs-horizontal.svg` | 메인 가로형 (헤더·푸터) |
 | `assets/images/logo/owgs-vertical.svg` | 메인 세로형 |
-| `assets/images/logo/owgs-youth-vertical.svg`, `owgs-campus-vertical.svg` | 리그 세로형 (참가 신청 카드) |
+| `assets/images/logo/owgs-youth-horizontal.svg`, `owgs-campus-horizontal.svg` | 리그 가로형 (규정집 버튼) |
 
 ### 브랜드 컬러 (BI 가이드 Main Color)
 

@@ -55,7 +55,6 @@
           <a href="https://discord.gg/JwHzDTyMKJ" target="_blank" rel="noopener noreferrer">문의 및 대회 진행</a>
         </nav>
 
-        <a class="header-cta" href="./index.html#register">참가 신청</a>
         <button class="menu-toggle" type="button" aria-label="메뉴 열기" aria-controls="navigation"
           aria-expanded="false"><span></span><span></span></button>
       </div>
@@ -79,36 +78,132 @@
               aria-selected="false" tabindex="-1" data-edition="campus"><span class="edition-tag" data-edition="campus">CAMPUS</span></button>
           </div>
 
-          <!--
-            이미지 넣는 방법
-            1. 이미지를 assets/images/teams/ 에 넣습니다. 권장: 가로 1920px 이상 PNG/JPG
-            2. 아래 '공개 전' 블록(<div class="media-frame media-empty"> … </div>)을 지우고 다음으로 바꿉니다.
-
-              <div class="media-frame">
-                <img src="./assets/images/teams/youth-teams.png" width="1920" height="1080"
-                  alt="YOUTH 참가 팀: (팀 이름을 쉼표로 나열)" loading="lazy" decoding="async">
-              </div>
-
-            이미지가 여러 장이면 <div class="media-frame"> 블록을 이어서 붙이면 됩니다.
-            width / height 에는 실제 이미지의 픽셀 크기를 적어 주세요.
-          -->
-
-          <!-- YOUTH -->
-          <section class="tab-panel" id="panel-youth" role="tabpanel" aria-labelledby="tab-youth"
+          <section class="tab-panel team-roster" id="panel-youth" role="tabpanel" aria-labelledby="tab-youth"
             data-edition="youth">
-            <div class="media-frame media-empty">
-              <strong>COMING SOON</strong>
-              <p>YOUTH 참가 팀은 공개 후 이곳에 게시됩니다.</p>
+            <div class="panel-block-head team-roster-head">
+              <h2 id="youth-roster-title">YOUTH 참가 팀</h2>
+              <p class="team-count">51팀</p>
             </div>
+            <ul class="team-grid" role="list" aria-labelledby="youth-roster-title">
+              <li>광운인공지능고등학교</li>
+              <li>남대전고등학교</li>
+              <li>달천중학교</li>
+              <li>대구경원고등학교</li>
+              <li>대구제일고등학교</li>
+              <li>대륜고등학교</li>
+              <li>대양고등학교</li>
+              <li>대인고등학교</li>
+              <li>동백중학교</li>
+              <li>동암고등학교</li>
+              <li>동향중학교</li>
+              <li>매현중학교</li>
+              <li>백운고등학교</li>
+              <li>부광고등학교</li>
+              <li>부산중앙고등학교</li>
+              <li>서울공업고등학교</li>
+              <li>신사중학교</li>
+              <li>안동경덕중학교</li>
+              <li>안양문화고등학교</li>
+              <li>양영디지털고등학교</li>
+              <li>여강고등학교</li>
+              <li>여수공업고등학교</li>
+              <li>여주고등학교 <span class="team-number">(1)</span></li>
+              <li>여천고등학교</li>
+              <li>영등포고등학교</li>
+              <li>예일중학교</li>
+              <li>옥계동부중학교</li>
+              <li>우송고등학교</li>
+              <li>운호고등학교</li>
+              <li>웅천중학교</li>
+              <li>원광고등학교</li>
+              <li>원화여자고등학교</li>
+              <li>은평메디텍고등학교</li>
+              <li>이리고등학교</li>
+              <li>이리중학교</li>
+              <li>이일여자고등학교</li>
+              <li>일동고등학교</li>
+              <li>전북제일고등학교</li>
+              <li>정읍고등학교</li>
+              <li>중흥중학교</li>
+              <li>창의고등학교</li>
+              <li>청덕고등학교 <span class="team-number">(1)</span></li>
+              <li>청덕고등학교 <span class="team-number">(2)</span></li>
+              <li>치악고등학교</li>
+              <li>통진고등학교</li>
+              <li>평촌과학기술고등학교</li>
+              <li>포산고등학교</li>
+              <li>포항제철중학교</li>
+              <li>한세사이버보안고등학교</li>
+              <li>호곡중학교</li>
+              <li>호서고등학교</li>
+            </ul>
           </section>
 
-          <!-- CAMPUS -->
-          <section class="tab-panel" id="panel-campus" role="tabpanel" aria-labelledby="tab-campus"
+          <section class="tab-panel team-roster" id="panel-campus" role="tabpanel" aria-labelledby="tab-campus"
             data-edition="campus" hidden>
-            <div class="media-frame media-empty">
-              <strong>COMING SOON</strong>
-              <p>CAMPUS 참가 팀은 공개 후 이곳에 게시됩니다.</p>
+            <div class="panel-block-head team-roster-head">
+              <h2 id="campus-roster-title">CAMPUS 참가 팀</h2>
+              <p class="team-count">57팀</p>
             </div>
+            <ul class="team-grid" role="list" aria-labelledby="campus-roster-title">
+              <li>경북대학교 <span class="team-number">(1)</span></li>
+              <li>경성대학교</li>
+              <li>계명대학교</li>
+              <li>고려대학교 <span class="team-number">(2)</span></li>
+              <li>광운대학교</li>
+              <li>국립목포해양대학교</li>
+              <li>국립한국교통대학교</li>
+              <li>국민대학교</li>
+              <li>국제대학교</li>
+              <li>남서울대학교</li>
+              <li>단국대학교</li>
+              <li>대구가톨릭대학교</li>
+              <li>대전보건대학교</li>
+              <li>동국대학교 <span class="team-number">(1)</span></li>
+              <li>동서대학교</li>
+              <li>명지대학교</li>
+              <li>명지전문대학</li>
+              <li>배재대학교 <span class="team-number">(1)</span></li>
+              <li>백석대학교</li>
+              <li>서울과학기술대학교 <span class="team-number">(1)</span></li>
+              <li>서울과학기술대학교 <span class="team-number">(2)</span></li>
+              <li>서울대학교 <span class="team-number">(2)</span></li>
+              <li>성공회대학교</li>
+              <li>성균관대학교 <span class="team-number">(1)</span></li>
+              <li>성균관대학교 <span class="team-number">(2)</span></li>
+              <li>수원대학교</li>
+              <li>순천향대학교</li>
+              <li>신구대학교</li>
+              <li>연세대학교 <span class="team-number">(1)</span></li>
+              <li>연세대학교 미래캠퍼스 <span class="team-number">(2)</span></li>
+              <li>영남대학교</li>
+              <li>오산대학교 <span class="team-number">(1)</span></li>
+              <li>우송정보대학교</li>
+              <li>울산과학기술원</li>
+              <li>울산대학교</li>
+              <li>인하공업전문대학교</li>
+              <li>인하대학교 <span class="team-number">(1)</span></li>
+              <li>인하대학교 <span class="team-number">(2)</span></li>
+              <li>조선대학교</li>
+              <li>중부대학교</li>
+              <li>청주교육대학교</li>
+              <li>충북대학교 <span class="team-number">(1)</span></li>
+              <li>한경국립대학교</li>
+              <li>한국공학대학교 <span class="team-number">(1)</span></li>
+              <li>한국공학대학교 <span class="team-number">(2)</span></li>
+              <li>한국과학기술원</li>
+              <li>한국기술교육대학교</li>
+              <li>한국외국어대학교 <span class="team-number">(1)</span></li>
+              <li>한국항공대학교</li>
+              <li>한양여자대학교</li>
+              <li>호서대학교 <span class="team-number">(1)</span></li>
+              <li>호서대학교 <span class="team-number">(2)</span></li>
+              <li>호서대학교 <span class="team-number">(3)</span></li>
+              <li>홍익대학교 <span class="team-number">(1)</span></li>
+              <li>홍익대학교 <span class="team-number">(2)</span></li>
+              <li>홍익대학교 <span class="team-number">(3)</span></li>
+              <li>홍익대학교 <span class="team-number">(4)</span></li>
+            </ul>
           </section>
         </div>
       </div>

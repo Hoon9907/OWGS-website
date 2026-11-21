@@ -506,6 +506,41 @@ main:focus {
   font-size: 17px;
 }
 
+.info-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.info-actions .btn {
+  flex: 1 1 290px;
+}
+
+.info-actions .btn span {
+  white-space: normal;
+}
+
+.info-actions .rules-link {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  min-height: 80px;
+  box-shadow: inset 0 -3px var(--ed);
+}
+
+.rules-link img {
+  display: block;
+  width: 144px;
+  max-width: 100%;
+  height: auto;
+}
+
+.rules-link .link-state {
+  justify-self: end;
+  text-align: right;
+  word-break: keep-all;
+}
+
 .btn-discord {
   padding: 0 18px;
   border: 1px solid #8992ff;
@@ -525,6 +560,26 @@ main:focus {
 .btn-secondary[href]:hover {
   border-color: var(--text);
   filter: none;
+}
+
+.info-actions .rules-link:hover,
+.info-actions .rules-link:focus-visible {
+  border-color: var(--ed);
+  box-shadow: inset 0 -3px var(--ed), inset 0 0 32px color-mix(in srgb, var(--ed) 30%, transparent);
+}
+
+.rules-link:is(:hover, :focus-visible) .link-state {
+  color: var(--ed);
+}
+
+.discord-link-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.discord-link-label svg {
+  flex: none;
 }
 
 .btn[aria-disabled="true"] {
@@ -1498,6 +1553,60 @@ time small {
   height: 3px;
   background: var(--ed-grad);
 }
+
+.team-roster-head {
+  align-items: center;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--line);
+}
+
+.team-roster-head .team-count {
+  padding: 4px 12px;
+  border: 1px solid var(--ed);
+  border-radius: 999px;
+  color: var(--text);
+  font-weight: 700;
+}
+
+.team-grid,
+.match-times {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.team-grid li,
+.match-times li {
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-inline-start: 2px solid var(--ed);
+  background: var(--surface);
+  font-size: 1rem;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.match-times li {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.match-times time {
+  color: var(--ed);
+  font-size: 1.25rem;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+
+.team-number {
+  color: var(--muted);
+  white-space: nowrap;
+}
+
 
 .panel-block + .panel-block {
   margin-top: 64px;

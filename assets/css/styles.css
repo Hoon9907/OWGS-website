@@ -1571,15 +1571,31 @@ time small {
 .team-grid,
 .match-times {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
   gap: 8px;
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.team-grid li,
+.team-grid {
+  gap: 12px;
+  align-items: start;
+}
+
+@media (min-width: 760px) {
+  .team-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.match-times {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+}
+
 .match-times li {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
   padding: 12px 14px;
   border: 1px solid var(--line);
   border-inline-start: 2px solid var(--ed);
@@ -1589,12 +1605,6 @@ time small {
   overflow-wrap: anywhere;
 }
 
-.match-times li {
-  display: flex;
-  align-items: baseline;
-  gap: 12px;
-}
-
 .match-times time {
   color: var(--ed);
   font-size: 1.25rem;
@@ -1602,9 +1612,167 @@ time small {
   font-variant-numeric: tabular-nums;
 }
 
+.team-card {
+  border: 1px solid var(--line);
+  border-inline-start: 3px solid var(--ed);
+  border-radius: 12px;
+  background: var(--surface);
+}
+
+.team-card summary {
+  display: grid;
+  grid-template-columns: 32px minmax(0, 1fr) 32px;
+  align-items: center;
+  gap: clamp(8px, 2vw, 18px);
+  padding: 16px clamp(12px, 3vw, 24px);
+  border-radius: inherit;
+  font-size: clamp(1rem, 2.2vw, 1.2rem);
+  font-weight: 750;
+  list-style: none;
+  cursor: pointer;
+  overflow-wrap: anywhere;
+}
+
+.team-card summary::-webkit-details-marker {
+  display: none;
+}
+
+.team-card summary:hover,
+.team-card[open] summary {
+  background: linear-gradient(105deg, color-mix(in srgb, var(--ed) 10%, var(--surface)), var(--surface));
+}
+
+.team-card summary:focus-visible {
+  outline: 2px solid var(--ed);
+  outline-offset: -3px;
+}
+
+.team-card[open] {
+  border-color: color-mix(in srgb, var(--ed) 48%, var(--line));
+  border-inline-start-color: var(--ed);
+}
+
+.team-card[open] summary {
+  border-end-start-radius: 0;
+  border-end-end-radius: 0;
+}
+
+.team-card summary > span:first-child {
+  grid-area: 1 / 2;
+  text-align: center;
+}
+
+.team-size {
+  grid-area: 1 / 1;
+  color: var(--muted);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.team-chevron {
+  grid-area: 1 / 3;
+  display: grid;
+  width: 32px;
+  height: 32px;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  color: var(--ed);
+}
+
+.team-chevron::before {
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  content: "";
+  transform: translateY(-2px) rotate(45deg);
+}
+
+.team-card[open] .team-chevron::before {
+  transform: translateY(2px) rotate(225deg);
+}
+
+.team-members {
+  padding: 0 clamp(12px, 3vw, 24px) 12px;
+  border-top: 1px solid var(--line);
+}
+
+.team-members table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+}
+
+.team-members th,
+.team-members td {
+  padding: 10px clamp(4px, 1.5vw, 14px);
+  text-align: center;
+  vertical-align: top;
+}
+
+.team-members th {
+  color: var(--muted);
+  font-size: 0.8125rem;
+}
+
+.team-members :is(th, td):first-child {
+  width: 19%;
+  white-space: nowrap;
+}
+
+.team-members :is(th, td):nth-child(2) {
+  width: 23%;
+  white-space: nowrap;
+}
+
+.team-members tbody tr {
+  border-top: 1px solid var(--line);
+}
+
+.team-members tbody tr:first-child td:first-child {
+  color: var(--ed);
+  font-weight: 700;
+}
+
+.team-members td:last-child {
+  overflow-wrap: anywhere;
+}
+
 .team-number {
   color: var(--muted);
   white-space: nowrap;
+}
+
+
+.event-details {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  gap: 12px 20px;
+  margin: 0;
+  padding: clamp(16px, 3vw, 28px);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
+
+.event-details dt {
+  font-weight: 700;
+}
+
+.event-details dd,
+.event-details ul {
+  margin: 0;
+}
+
+.event-details ul {
+  padding-inline-start: 1.25em;
+}
+
+.event-details li + li {
+  margin-top: 6px;
 }
 
 

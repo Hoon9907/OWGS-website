@@ -1699,6 +1699,28 @@ time small {
   border-top: 1px solid var(--line);
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  .team-chevron::before {
+    transition: transform 260ms ease;
+  }
+
+  @supports (interpolate-size: allow-keywords) and selector(details::details-content) {
+    .team-card::details-content {
+      interpolate-size: allow-keywords;
+      block-size: 0;
+      overflow: clip;
+      opacity: 0;
+      transition: block-size 300ms ease, opacity 220ms ease,
+        content-visibility 300ms allow-discrete;
+    }
+
+    .team-card[open]::details-content {
+      block-size: auto;
+      opacity: 1;
+    }
+  }
+}
+
 .team-members table {
   width: 100%;
   border-collapse: collapse;
@@ -1745,6 +1767,34 @@ time small {
   white-space: nowrap;
 }
 
+
+.event-preview {
+  padding: clamp(40px, 8vw, 88px) 16px;
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--orange);
+  border-radius: 12px;
+  background: radial-gradient(ellipse at top, #251a17, var(--surface) 70%);
+  text-align: center;
+}
+
+.event-preview h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(2.75rem, 9vw, 5.5rem);
+  font-weight: 800;
+  line-height: 1;
+}
+
+.event-preview p {
+  margin: 20px 0 0;
+  color: var(--muted);
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+}
+
+.event-preview time {
+  color: var(--orange-2);
+  font-weight: 750;
+}
 
 .event-details {
   display: grid;

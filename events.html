@@ -37,7 +37,7 @@
     <script src="./assets/js/site.js" defer></script>
   </head>
 
-  <body>
+  <body class="events-page">
     <a class="skip-link" href="#main">본문 바로가기</a>
 
     <!-- 공통 헤더: 메뉴를 바꾸면 HTML 4개에 동일하게 적용하세요. -->
@@ -65,6 +65,7 @@
         <div class="container">
           <p class="eyebrow">EVENTS</p>
           <h1>이벤트</h1>
+          <p class="section-lead">좌우 화살표를 누르면 다른 이벤트의 참여 방법과 혜택을 확인할 수 있습니다.</p>
         </div>
       </header>
 
@@ -75,53 +76,102 @@
             <p><time datetime="2026-11-27T11:00:00+09:00">11월 27일(금) 오전 11시</time> 공개 예정</p>
           </section>
           <template id="event-details">
-            <section class="panel-block" aria-labelledby="nconnect-event">
-              <div class="panel-block-head">
-                <h2 id="nconnect-event">N커넥트 연동 시청자 이벤트</h2>
-                <p><time datetime="2026-11-28">11/28</time>~<time datetime="2026-12-12">12/12</time></p>
-              </div>
-              <dl class="event-details">
-                <dt>대상</dt>
-                <dd>넥슨 계정과 SOOP 또는 네이버(치지직) 계정을 연동하고 [선택] 개인정보 제3자 제공에 동의한 인원 중, OWGS 공식 SOOP·치지직 채널 생방송을 누적 30분 이상 시청하고 당첨자 발표일까지 연동을 유지한 인원</dd>
-                <dt>내용</dt>
-                <dd>
-                  <ul>
-                    <li>플랫폼별로 기간 중 신규 연동자 50명과 기존 연동자 10명을 추첨해 인당 넥슨캐시 5만 원 지급</li>
-                    <li>두 플랫폼에서 모두 조건을 충족해도 1인 1회만 당첨</li>
-                    <li>자세한 참여 조건은 <time datetime="2026-11-27T11:00:00+09:00">11/27(금) 오전 11시</time> 홈페이지 공지사항 참고</li>
-                  </ul>
-                </dd>
-              </dl>
-            </section>
+            <div class="event-carousel" role="region" aria-label="이벤트 슬라이드">
+              <button type="button" class="event-carousel-arrow" data-event-step="-1" aria-controls="event-slides" aria-label="이전 이벤트">←</button>
+              <div id="event-slides">
+                <section class="panel-block event-card" aria-labelledby="nconnect-event">
+                  <a class="event-banner event-banner-link" aria-label="N커넥트 이벤트 공지사항 보기 (새 탭)"
+                    href="https://overwatch.nexon.com/news/event/872/owgs-youthowgs-campus-%EB%8C%80%ED%9A%8C-%EC%A7%84%ED%96%89-%EB%B0%8F-n%EC%BB%A4%EB%84%A5%ED%8A%B8-%EC%9D%B4%EB%B2%A4%ED%8A%B8-%EC%95%88%EB%82%B4"
+                    target="_blank" rel="noopener noreferrer">
+                    <img class="event-artwork" src="./assets/images/events/On-air-event.png"
+                      width="1920" height="1080" alt="" decoding="async">
+                  </a>
+                  <div class="event-summary event-summary-with-notice">
+                    <h2 id="nconnect-event">N커넥트 연동 시청자 이벤트</h2>
+                    <p><time datetime="2026-11-28">11/28</time>~<time datetime="2026-12-12">12/12</time></p>
+                    <a class="btn btn-primary" href="https://overwatch.nexon.com/news/event/872/owgs-youthowgs-campus-%EB%8C%80%ED%9A%8C-%EC%A7%84%ED%96%89-%EB%B0%8F-n%EC%BB%A4%EB%84%A5%ED%8A%B8-%EC%9D%B4%EB%B2%A4%ED%8A%B8-%EC%95%88%EB%82%B4"
+                      target="_blank" rel="noopener noreferrer">
+                      공지사항 보기 <span aria-hidden="true">↗</span>
+                    </a>
+                  </div>
+                  <dl class="event-details">
+                    <dt>대상</dt>
+                    <dd>
+                      <ul>
+                        <li>넥슨 계정과 SOOP 또는 네이버(치지직) 계정 연동</li>
+                        <li>[선택] 개인정보 제3자 제공 동의</li>
+                        <li>OWGS 공식 SOOP·치지직 생방송 누적 30분 이상 시청</li>
+                        <li>당첨자 발표일까지 계정 연동 유지</li>
+                      </ul>
+                    </dd>
+                    <dt>내용</dt>
+                    <dd>
+                      <ul>
+                        <li>플랫폼별로 기간 중 신규 연동자 50명과 기존 연동자 10명을 추첨해 인당 넥슨캐시 5만 원 지급</li>
+                        <li>두 플랫폼에서 모두 조건을 충족해도 1인 1회만 당첨</li>
+                      </ul>
+                    </dd>
+                  </dl>
+                </section>
 
-            <section class="panel-block" aria-labelledby="finals-attendance-event">
-              <div class="panel-block-head">
-                <h2 id="finals-attendance-event">결승전 현장 관람 이벤트</h2>
-              </div>
-              <dl class="event-details">
-                <dt>대상</dt>
-                <dd>결승전 현장 관람객 전원</dd>
-                <dt>내용</dt>
-                <dd>
-                  <ul>
-                    <li>넥슨캐시 3만 원</li>
-                    <li>이스포츠 전리품 상자</li>
-                  </ul>
-                </dd>
-              </dl>
-            </section>
+                <section class="panel-block event-card" aria-labelledby="finals-attendance-event">
+                  <div class="event-banner">
+                    <img class="event-artwork" src="./assets/images/events/Grand-Finals-Event.png"
+                      width="1920" height="1080" alt="" loading="lazy" decoding="async">
+                  </div>
+                  <div class="event-summary">
+                    <h2 id="finals-attendance-event">결승전 현장 관람 이벤트</h2>
+                  </div>
+                  <dl class="event-details">
+                    <dt>대상</dt>
+                    <dd>결승전 현장 관람객 전원</dd>
+                    <dt>내용</dt>
+                    <dd>
+                      <ul>
+                        <li>넥슨캐시 3만 원</li>
+                        <li>이스포츠 전리품 상자</li>
+                      </ul>
+                    </dd>
+                  </dl>
+                </section>
 
-            <section class="panel-block" aria-labelledby="lenovo-event">
-              <div class="panel-block-head">
-                <h2 id="lenovo-event">결승전 레노버 럭키드로우</h2>
+                <section class="panel-block event-card" aria-labelledby="lenovo-event">
+                  <div class="event-banner">
+                    <img class="event-artwork" src="./assets/images/events/Finals-Lucky-Draw.png"
+                      width="1920" height="1080" alt="" loading="lazy" decoding="async">
+                  </div>
+                  <div class="event-summary">
+                    <h2 id="lenovo-event">결승전 레노버 럭키드로우 이벤트</h2>
+                  </div>
+                  <dl class="event-details">
+                    <dt>대상</dt>
+                    <dd>결승전 현장 관람객</dd>
+                    <dt>내용</dt>
+                    <dd>추첨을 통해 5명에게 레노버 리전 게이밍 모니터(Legion R32qc-30) 지급</dd>
+                    <dt>일시·장소</dt>
+                    <dd><time datetime="2026-12-12T13:00:00+09:00">12/12(토) 13:00</time> · WDG 홍대 스튜디오</dd>
+                  </dl>
+                </section>
+
+                <section class="panel-block event-card" aria-labelledby="finals-mvp-event">
+                  <div class="event-banner">
+                    <img class="event-artwork" src="./assets/images/events/Finals-MVP.png"
+                      width="1920" height="1080" alt="" loading="lazy" decoding="async">
+                  </div>
+                  <div class="event-summary">
+                    <h2 id="finals-mvp-event">결승전 MVP</h2>
+                  </div>
+                  <dl class="event-details">
+                    <dt>대상</dt>
+                    <dd>결승전 MVP 1명</dd>
+                    <dt>내용</dt>
+                    <dd>레노버 리전 게이밍 노트북(Lenovo Legion 5a) 지급</dd>
+                  </dl>
+                </section>
               </div>
-              <dl class="event-details">
-                <dt>대상</dt>
-                <dd>결승전 현장 관람객</dd>
-                <dt>내용</dt>
-                <dd>추첨을 통해 5명에게 레노버 경품 지급</dd>
-              </dl>
-            </section>
+              <button type="button" class="event-carousel-arrow" data-event-step="1" aria-controls="event-slides" aria-label="다음 이벤트">→</button>
+              <div class="event-carousel-dots" role="group" aria-label="이벤트 선택"></div>
+            </div>
           </template>
         </div>
       </div>
@@ -148,8 +198,87 @@
           }
 
           const template = document.getElementById('event-details');
-          preview.replaceWith(template.content.cloneNode(true));
+          const content = template.content.cloneNode(true);
+          const carousel = content.querySelector('.event-carousel');
+          const slides = carousel.querySelector('#event-slides');
+          const cards = [...slides.querySelectorAll('.event-card')];
+          const dotGroup = carousel.querySelector('.event-carousel-dots');
+          let current = 0;
+          let timer;
+          let finishTransition;
+          const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+
+          const showCard = (index, direction = 0) => {
+            finishTransition?.();
+            const previous = cards[current];
+            current = (index + cards.length) % cards.length;
+            const incoming = cards[current];
+            cards.forEach((card, cardIndex) => {
+              card.hidden = current !== cardIndex;
+            });
+            dots.forEach((dot, dotIndex) => {
+              dot.setAttribute('aria-current', String(current === dotIndex));
+            });
+
+            if (!direction || reducedMotion.matches || previous === incoming) return;
+
+            previous.hidden = false;
+            previous.inert = true;
+            const timing = { duration: 520, easing: 'cubic-bezier(.22,.61,.36,1)' };
+            const exit = previous.animate([
+              { transform: 'translateX(0)', opacity: 1 },
+              { transform: `translateX(${-direction * 30}%) rotateY(${direction * 9}deg)`, opacity: 0 }
+            ], timing);
+            const enter = incoming.animate([
+              { transform: `translateX(${direction * 30}%) rotateY(${-direction * 9}deg)`, opacity: 0 },
+              { transform: 'translateX(0)', opacity: 1 }
+            ], timing);
+            finishTransition = () => {
+              enter.onfinish = null;
+              previous.hidden = true;
+              previous.inert = false;
+              exit.cancel();
+              enter.cancel();
+              finishTransition = undefined;
+            };
+            enter.onfinish = finishTransition;
+          };
+
+          const setPlaying = playing => {
+            clearInterval(timer);
+            if (playing) {
+              timer = setInterval(() => {
+                if (!document.hidden && !slides.matches(':hover, :focus-within')) {
+                  showCard(current + 1, 1);
+                }
+              }, 8000);
+            }
+          };
+
+          const dots = cards.map((card, index) => {
+            const dot = document.createElement('button');
+            dot.type = 'button';
+            dot.setAttribute('aria-label', card.querySelector('h2').textContent);
+            dot.setAttribute('aria-controls', 'event-slides');
+            dot.addEventListener('click', () => {
+              showCard(index, Math.sign(index - current));
+              setPlaying(!reducedMotion.matches);
+            });
+            dotGroup.append(dot);
+            return dot;
+          });
+
+          carousel.querySelectorAll('[data-event-step]').forEach(button => {
+            button.addEventListener('click', () => {
+              const direction = Number(button.dataset.eventStep);
+              showCard(current + direction, direction);
+              setPlaying(!reducedMotion.matches);
+            });
+          });
+          showCard(0);
+          preview.replaceWith(content);
           template.remove();
+          setPlaying(!reducedMotion.matches);
         };
 
         revealEvents();
